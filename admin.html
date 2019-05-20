@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" /> -->
+  <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminStyles.css') }}" /> -->
+  <link rel="stylesheet" type="text/css" href="adminStyles.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/> -->
+
+  <title>Admin Page</title>
+</head>
+
+<body>
+  <header id="header">
+    <h1>Admin</h1>
+        <div id=logoDiv>
+          <a href="index.html"><img id=logoImage src="images/rateyourmeallogobox.png" height=200px></a>
+        </div>
+      <ul>
+        <a href="admin.html"><li style="background-color: #FBFBF2; color:black">New Restaurant</li></a>
+        <a href="admin2.html"><li>Edit Restaurant</li></a>
+        <a href="admin3.html"><li>Rating Keywords</li></a>
+      </ul>
+  </header>
+
+  <br><section>
+    <form action="#" method = 'post' enctype = 'multipart/form-data'>
+    <label>Business Name:</label>
+      <input type ='text' name='restaurant_name'><br><br>
+    <label>Address:</label>
+      <input type ='text' size='30' name='address'><br><br>
+    <label>Boro:</label>
+      <select name='boro'>
+        <!-- <option name='boro' value="" disabled selected>Select your option</option> -->
+        <option name='boro' value ='Manhattan'>Manhattan</br>
+        <option name='boro' value ='Brooklyn'>Brooklyn</br>
+        <option name='boro' value ='Queens'>Queens</br>
+        <option name='boro' value ='Bronx'>Bronx</br>
+        <option name='boro' value ='Staten Island'>Staten Island</br>
+      </select><br><br>
+    <label>Latitude and Longitude:</label>
+        <input type ='number'  name='lat' step="any" placeholder = 40.722216 > Lat</br>
+        <label></label> <!--hidden label-->
+        <input type ='number'  name='lng' step="any" placeholder = -73.722216 > Lng</br><br>
+    <label>Telephone:</label>
+      <input type ='text' size='30' name='telephone' placeholder='555-555-5555'><br><br>
+    <label>Specify an Image File</label>
+    <input type='file' name='image'  id='file'><br><br>
+    <label>Type of Cuisine:</label>
+    <select name='cuisine'>
+      <!-- <option name='cuisine' value="" disabled selected>Select your option</option> -->
+      <option name='cuisine' value ='Asian'>Asian</br>
+      <option name='cuisine' value ='Mexican'>Mexican</br>
+      <option name='cuisine' value ='American'>American</br>
+      <option name='cuisine' value ='Pizza'>Pizza</br>
+    </select><br><br>
+    <label>Operation Hours:</label>
+      <input type ='text'  name='mon' placeholder ='8:00 am - 10:30 pm'> Monday</br>
+      <label></label> <!--hidden label-->
+      <input type ='text'  name='tue' placeholder ='8:00 am - 10:30 pm'> Tuesday</br>
+      <label></label> <!--hidden label-->
+      <input type ='text' name='wed' placeholder ='8:00 am - 10:30 pm'> Wednesday</br>
+      <label></label> <!--hidden label-->
+      <input type ='text'  name='thu' placeholder ='8:00 am - 10:30 pm'> Thursday</br>
+      <label></label> <!--hidden label-->
+      <input type ='text'  name='fri' placeholder ='8:00 am - Sat'> Friday</br>
+      <label></label> <!--hidden label-->
+      <input type ='text' name='sat' placeholder ='Open 24 hours'> Saturday</br>
+      <label></label> <!--hidden label-->
+      <input type ='text'  name='sun' placeholder ='Sat - 10:30 pm'> Sunday</br>
+
+    </br><br>
+    <label></label> <!--hidden label-->
+    <input type='submit' value='Create'>
+</form>
+</section>
+
+  <br><br>
+  <!-- <footer id="footer">
+    Copyright (c) 2019 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+  </footer> -->
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+body{
+  background-color: #FBFBF2;
+}
+header{
+  background:url(images/restaurant_headerU.jpg) no-repeat center;
+    background-size:cover;
+    height:300px;
+}
+#loginNav{
+  display:flex;
+  justify-content: flex-end;
+  /* float:right; */
+}
+#login{
+  font-size:23px;
+  color: #f3f3f3;
+  /* font-weight: bold; */
+  padding-right:10px;
+  text-shadow: 2px 2px grey;
+}
+#logoDiv{
+  display:flex;
+  justify-content:center;
+}
+#searchDiv{
+  background-color:#D3D0CB;
+  height: 45px;
+  display:flex;
+  justify-content:center;
+}
+#searchBox{
+  /* height: 35px; */
+  padding-top: 9px;
+  padding-right: 3px;
+}
+#selectText{
+  height: 30px;
+  width:200px;
+}
+#selectBox{
+  padding-top:9px;
+}
+.restaurantBox{
+  border: 1px solid #D3D0CB;
+  width: 260px;
+  height: 310px;
+  display:inline-block;
+  background-color: #fbfbf2;
+  border-radius: 5px;
+  margin-bottom:15px;
+}
+.restaurantImg{
+  width:100%;
+}
+.restaurantBox .restaurantName{
+  font-size: 18px;color: #393E41;
+}
+.restaurantBox.restaurantRating{
+font-size:30px;
+}
+#star{
+  color: red;
+}
+.detailButton{
+  width: 110px;
+  color: white;
+  background-color: #393E41;
+  border-radius: 5px;
+  border: 1px solid #393e41;
+  cursor:pointer;
+}
+.detailButton:hover{
+  opacity:.8;
+}
+.writeButton{
+  width: 110px;
+  padding:1px 3px 1px;
+  float: right;
+  color: white;
+  background-color: #393E41;
+  border-radius: 5px;
+  border: 1px solid #393e41;
+  cursor:pointer;
+}
+.writeButton:hover{
+  opacity:.8;
+}
+button{
+  /* background-color: #393e41; */
+}
+footer{
+  background-color: #d3d0cb;
+  padding: 20px;
+  text-align: center;
+}

@@ -1,0 +1,98 @@
+body{
+  background-color: #FBFBF2;
+}
+header{
+  background-color:#A80B0B;
+}
+
+#logoDiv{
+  display:flex;
+  justify-content:center;
+}
+#searchDiv{
+  background-color:#D3D0CB;
+  height: 45px;
+  display:flex;
+  justify-content:flex-end;
+}
+#searchBox{
+  /* height: 35px; */
+  padding-top: 7px;
+  padding-right: 8px;
+}
+#info1{
+  /* border:1px solid black; */
+  width:50%;
+  height: 450px;
+}
+#info2{
+  /* border:1px solid black; */
+  width:50%;
+  height: 450px;
+}
+#restaurantImg{
+  width: 85%;
+}
+#writeButton{
+  width: 110px;
+  padding:3px;
+  color: white;
+  background-color: #393E41;
+  border-radius: 5px;
+  border: 1px solid #393e41;
+  cursor: pointer;
+}
+#restaurantAdd{
+  font-size: 20px;
+}
+#restaurantRating{
+  font-size: 20px;
+}
+#infoRev{
+  /* border:1px solid black; */
+  width: 65%;
+  /* height: 2000px; */
+  border-right: 1px solid #ebebe2;
+  margin-bottom: 20px;
+}
+#infoOther{
+  /* border:1px solid black; */
+  width:30%;
+  height:800px;
+  font-size:15px;
+  margin-left: 15px;
+}
+.userInfo{
+  /* border:1px solid black; */
+  width:20%;
+  /* height:500px; */
+}
+.revInfo{
+  /* border:1px solid black; */
+  /* height:500px; */
+  width:70%;
+  /* padding-left: 10px; */
+  margin-left: 20px;
+}
+.revcon{
+ border-bottom: 1px solid #d3d0cb;
+ width: 95%;
+}
+label{
+  font-size:20px;
+}
+input{
+  height:30px;
+  font-size:20px;
+}
+#selectRat{
+  font-size:15px;
+}
+footer{
+  background-color: #d3d0cb;
+  padding: 20px;
+  text-align: center;
+}
+#restName{
+  text-transform: uppercase;
+}
