@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
@@ -21,7 +22,7 @@
       <div id=searchDiv>
         <div id="searchBox">
           <input style="height:30px;width:200px" type="text" placeholder="Find" name="search2">
-          <button type="submit"><img src="images/search_icon.png" height=20px></button>
+          <button type="submit"><i class="fas fa-search"></i></button>
         </div>
       </div>
       <section id=restaurantInfo>
@@ -30,10 +31,11 @@
           <div class="d-flex flex-row flex-wrap justify-content-center">
             <div class="p-2" id=info1>
               <h2 id='restName'></h2>
-              <p id=restaurantRating>RATING:  <span id=stars></span><span>, CHINESE</span></p>
+              <p id=restaurantRating class="font-weight-bold" style="color:grey">RATING:  <span id=stars></span><span>, CHINESE</span></p>
               <br><br>
-              <p id="restaurantAdd">Manhattan<br>171 E Broadway, New York, NY 10002<br>(917) 376-5660<br>
-                <a href="https://www.missionchinesefood.com/">Website</a>
+              <p id="restaurantAdd" class="text-uppercase m-0">Manhattan</p>
+              <p>171 E Broadway<br> New York, NY 10002<br>(917) 376-5660<br>
+                <a href="https://www.missionchinesefood.com/">Restaurant Site</a>
               </p>
           </div>
           <div class="p-2" id=info2>
@@ -60,7 +62,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div> -->
-            <img style="float:right" id=restaurantImg src="">
+            <img class="img-thumbnail" style="float:right" id=restaurantImg src="">
 
           </div>
           </div>
@@ -71,41 +73,17 @@
           <div class=container>
             <br>
             <h3>Reveiws</h3>
-            <div class="d-flex flex-row flex-wrap justify-content-left">
+            <div class="d-flex flex-column-reverse flex-lg-row justify-content-left ">
               <div class="d-flex flex-column" id="infoRev">
-                <!-- <div class="p-2 d-flex flex-row revcon">
-                <div class="p-2 userInfo"><b>Berry</b><br><br>
-                  <img height=120px width=120px src="images/user1.jpg" >
-                  </div>
-                <div class="p-2 revInfo">
-                  <span id=stars1></span><br><br>
-                  January 4, 2018<br><br>
-                  Mission Chinese Food has grown up from its scrappy Orchard Street days into a big, two story restaurant equipped with a pizza oven, a prime rib cart, and a much broader menu. Yes, it still has all the hits — the kung pao pastrami, the thrice cooked bacon —but chef/proprietor Danny Bowien and executive chef Angela Dimayuga have also added a raw bar, two generous family-style set menus, and showstoppers like duck baked in clay. And you can still get a lot of food without breaking the bank.<br><br>
-                </div>
-              </div> -->
-              <!-- <hr>
-              <div class="p-2 d-flex flex-row revcon">
-              <div class="p-2 userInfo"><b>Sally</b><br><br>
-                <img height=120px width=120px src="images/user2.jpg" >
-                </div>
-              <div class="p-2 revInfo">
-                <span id=stars2></span><br><br>
-                Febuary 29, 2018<br><br>
-                This place is a blast. Must orders: GREEN TEA NOODS, sounds gross (to me at least) but these were incredible!,
-                Kung pao pastrami (but you already knew that), beef tartare was a fun appetizer that we decided to try, the spicy
-                ma po tofu SUPER spicy but delicous, egg rolls and scallion pancake i could have passed on...
-                I wish we would have gone with a larger group, so much more I would have liked to try!<br><br>
-              </div>
-            </div>
-            <hr> -->
+
             <form id="reviewForm" style="width:100%" method='POST'>
               <h3 id="writeReviewTitle">Write Review<h3><br>
-            <label style="width:100px;display:inline-block;font-weight:normal">Name:</label>
-              <input type ='text' size='20' name='name' id='name'><br>
-            <label style="width:100px;display:inline-block;font-weight:normal">Date:</label>
-              <input type ='text' size='20' name='date' id='date'><br>
-            <label style="width:100px;display:inline-block;font-weight:normal">Rating:</label>
-            <select id='selectRat' name='rating' style="width:160px;height:30px">
+            <label for='name'style="width:100px;display:inline-block;font-weight:normal">Name:</label>
+              <input type ='text' size='20' name='name' id='name' required><br>
+            <label for='date' style="width:100px;display:inline-block;font-weight:normal">Date:</label>
+              <input type ='text' size='20' name='date' id='date' required><br>
+            <label for='selectRat' style="width:100px;display:inline-block;font-weight:normal">Rating:</label>
+            <select id='selectRat' name='rating' style="width:160px;height:30px" required>
                 <option value="" disabled selected>Select the rating</option>
                 <option name='rating' value ='1.0'>1.0<br>
                 <option name='rating' value ='1.5'>1.5<br>
@@ -117,14 +95,8 @@
                 <option name='rating' value ='4.5'>4.5<br>
                 <option name='rating' value ='5.0'>5.0<br>
             </select><br><br>
-            <!-- <p>Rating:</p>
-              <input type ='radio'  name='rating' value ='excellent'>Excellent</br>
-              <input type ='radio'  name='rating' value ='good'>Good</br>
-              <input type ='radio' name='rating' value ='norm'>Norm</br>
-              <input type ='radio'  name='rating' value ='bad'>Bad</br>
-            </br> -->
-              <!-- <input type ='text' size='30' name='comments'> -->
-              <textarea id='comment' rows="5" style = "width:80%;padding-left:3px;font-size:20px" name="comments" placeholder="Write Review..."></textarea><br>
+
+              <label for='comment'></label><textarea id='comment' rows="5" style = "width:80%;padding-left:3px;font-size:20px" name="comments" placeholder="Write Review..."></textarea><br>
           <input style="font-size:20px" type='button' value='Create' onclick= "review()"><br><br>
         </form>
               </div>
@@ -132,16 +104,7 @@
                 <div id=hours>
                   <p id=hoursP><b>Hours</b><br><br>
                   </p>
-                  <!-- <p><b>Hours</b><br><br>Monday&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp5:30 pm - 11:00 pm
-                                     <br>Tuesday&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp5:30 pm - 12:00 am
-                                     <br>Wednesday&nbsp&nbsp&nbsp5:30 pm - 12:00 am
-                                     <br>Thursday&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp5:30 pm - 12:00 am
-                                     <br>Friday&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp5:30 pm - 12:00 am
-                                     <br>Sunday&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp12:00 pm - 4:00 pm,
-                                     <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp5:30 pm - 11:00 pm
-                                     <br>Saturday&nbsp&nbsp&nbsp&nbsp&nbsp12:00 pm - 4:00 pm,
-                                     <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp5:30 pm - 12:00 am<br>
-                  </p> -->
+
 <iframe width=100% src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1861676242593!2d-73.99188428553877!3d40.713918045436806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a2977777bf3%3A0x68e15366700a4fb0!2s171+E+Broadway%2C+New+York%2C+NY+10002!5e0!3m2!1sen!2sus!4v1558052656503!5m2!1sen!2sus" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>                  </div>
 
 

@@ -21,7 +21,7 @@ body{
 }
 #header ul{
   list-style-type:none;
-  padding:0
+  padding:0;
 }
 a:link, a:visited{
   text-decoration: none;

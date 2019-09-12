@@ -15,9 +15,14 @@ header{
   font-size:23px;
   color: #f3f3f3;
   /* font-weight: bold; */
-  padding-right:10px;
-  text-shadow: 2px 2px grey;
+  /* text-shadow: 2px 2px grey; */
+  background-color: grey;
+  padding: 0px 3px;
 }
+
+a#login {}
+
+a#login {}
 #logoDiv{
   display:flex;
   justify-content:center;

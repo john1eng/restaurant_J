@@ -1,14 +1,16 @@
-// 
-// document.getElementById("stars1").innerHTML = getStars(3.6);
-// document.getElementById("stars2").innerHTML = getStars(4.0);
-// document.getElementById("stars3").innerHTML = getStars(3.6);
-// document.getElementById("stars4").innerHTML = getStars(3.6);
-// document.getElementById("stars5").innerHTML = getStars(3.6);
-// document.getElementById("stars6").innerHTML = getStars(3.6);
-// document.getElementById("stars7").innerHTML = getStars(3.6);
-// document.getElementById("stars8").innerHTML = getStars(3.6);
-// document.getElementById("stars9").innerHTML = getStars(3.6);
 
+function averageRating(id, data){
+  var totalRate = 0;
+  var averageRate = 0;
+  for(var i=0;i<data[id].reviews.length;i++){
+    totalRate += +data[id].reviews[i].rating;
+    console.log(+totalRate);
+  }
+  averageRate = (totalRate/(data[id].reviews.length));
+  console.log(data[id].reviews.length);
+  console.log(averageRate);
+  return averageRate;
+}
 
 function getStars(rating) {
 

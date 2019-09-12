@@ -10,7 +10,7 @@ header{
   justify-content:center;
 }
 #searchDiv{
-  background-color:#D3D0CB;
+  background-color: #D3D0CB;
   height: 45px;
   display:flex;
   justify-content:flex-end;
@@ -43,7 +43,7 @@ header{
   cursor: pointer;
 }
 #restaurantAdd{
-  font-size: 20px;
+  font-size: 1.2rem;
 }
 #restaurantRating{
   font-size: 20px;

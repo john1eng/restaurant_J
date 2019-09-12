@@ -44,13 +44,14 @@ renderHTML(data.restaurant);
 
 //generate data from the json server
 function renderHTML(data){
+
   var i = getJsonFromUrl();
   var hourString = "";
   var reviewString = "";
   console.log(i);
   restaurantName.insertAdjacentHTML('beforeend', data[i.id].name);
   restaurantImg.setAttribute("src",`images/${data[i.id].img}`);
-  rating.insertAdjacentHTML('beforeend', getStars(data[i.id].rating));
+  rating.insertAdjacentHTML('beforeend', getStars(averageRating(i.id,data)));
 
   //object method to convert object to an array
   console.log(data[i.id].hours);
@@ -73,10 +74,10 @@ function renderHTML(data){
   console.log(ii);
   let reviewString = "";
   reviewString += '<div class="d-flex flex-row revcon">';
-  reviewString += `<div class="p-2 userInfo"><b>${data[i.id].reviews[ii].name}</b><br><br>`;
-  reviewString += `<img height=120px width=120px src='images/user${ii+1}.jpg' >`;
+  reviewString += `<div class="userInfo"><b>${data[i.id].reviews[ii].name}</b><br><br>`;
+  reviewString += `<img width="100%" src='images/user${ii+1}.jpg' >`;
   reviewString += "</div>";
-  reviewString += "<div class='p-2 revInfo'>";
+  reviewString += "<div class='revInfo'>";
   reviewString += `<span id=stars${ii}></span><br><br>`;
   reviewString += `${data[i.id].reviews[ii].date}<br><br>`;
   reviewString += `${data[i.id].reviews[ii].review}<br><br>`;
@@ -87,16 +88,7 @@ function renderHTML(data){
   console.log(ratingrev);
   ratingrev.insertAdjacentHTML('beforeend', getStars(data[i.id].reviews[ii].rating));
 }
-  // <div class="p-2 d-flex flex-row revcon">
-  // <div class="p-2 userInfo"><b>Berry</b><br><br>
-  //   <img height=120px width=120px src="images/user1.jpg" >
-  //   </div>
-  // <div class="p-2 revInfo">
-  //   <span id=stars1></span><br><br>
-  //   January 4, 2018<br><br>
-  //   Mission Chinese Food has grown up from its scrappy Orchard Street days into a big, two story restaurant equipped with a pizza oven, a prime rib cart, and a much broader menu. Yes, it still has all the hits — the kung pao pastrami, the thrice cooked bacon —but chef/proprietor Danny Bowien and executive chef Angela Dimayuga have also added a raw bar, two generous family-style set menus, and showstoppers like duck baked in clay. And you can still get a lot of food without breaking the bank.<br><br>
-  // </div>
-  // </div>
+
 }
 //access data from submit form
 function review(){
@@ -104,33 +96,36 @@ function review(){
   var date = document.getElementById('date').value;
   var rating = document.getElementById('selectRat').value;
   var review = document.getElementById('comment').value;
-
+  console.log("reveiw function");
   $.get("https://jsonstorage.net/api/items/3ee18af8-f30e-4094-97a7-570dac704378",
   function(data, textStatus, jqXHR)
   {
     var newData = data.restaurant;
+    //get the restaurant id
     var i = getJsonFromUrl();
-    //if restaurant do not have reviews
+    //if restaurant do not have reviews, it will create a review array
     console.log(newData[i.id].reviews);
     if(newData[i.id].reviews == undefined){
     newData[i.id].reviews = [];
     console.log(newData);
     }
-
+//find the length of the review
     var ii = newData[i.id].reviews.length;
     console.log(i);
     console.log(ii);
 
 
+//filld the reviews
+   newData[i.id].reviews[ii]= {'name' : name, 'date' : date, 'rating' : rating, 'review' : review};
 
-    newData[i.id].reviews[ii]= {'name' : name, 'date' : date, 'rating' : rating, 'review' : review};
+//delete the last review
+//    newData[i.id].reviews.pop();
 
-
-    // newData[0].reviews.pop();
     //method to remove array
     // var testing = newData[0].reviews.slice(0,4)
     // newData[0].reviews = testing;
     // console.log(newData);
+
     //convert newData back to restaurant as the key
     newData = {'restaurant':newData};
     var newDataString = JSON.stringify(newData);
@@ -145,9 +140,12 @@ function review(){
     contentType:"application/json; charset=utf-8",
     dataType:"json",
     success: function(data, textStatus, jqXHR){
+        window.location.href = `thankyouRev.html?id=${getJsonFromUrl().id}`
     }
 });
 
+
     console.log(newData[0]);
   });
+
 }

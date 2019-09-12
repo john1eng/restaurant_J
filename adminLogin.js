@@ -2,12 +2,15 @@ function checkLogin(){
 var user = document.getElementById('user').value;
 var pass = document.getElementById('pass').value;
 
-if(!(/admin/i.test(user)) && !(/'admin'/i.test(pass)))
+console.log(/admin$/i.test(user));
+console.log(/admin$/i.test(pass));
+
+if(!(/admin$/i.test(user)) || !(/admin$/i.test(pass)))
 {
 alert("Wrong Login Info");
 }
 else{
-  window.location.href = "admin.html";
+  window.location.href = "addRestaurant.html";
 }
 
 
